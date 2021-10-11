@@ -7,18 +7,18 @@ namespace AgafonovTheBest
     class LinearEquation
     {
         public const string MEGASUPERCONST = "MEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONSTMEGASUPERCONST";
-
+        
         protected List<float> x;
         public List<float> calcLinearEquation(float a, float b)
         {
             if (a == 0)
-                throw new ArgumentException("Нельзя делить на 0");
+            {
+                throw new AgafonovException("Уравнения не существует");
+            }
+                
 
-            x = new List<float>();
-
-            x.Add(-b / a);
-            return  x;
-           
+            AgafonovLog.I().log("Это линейное уравнение");
+            return x = new List<float>() { -b / a };
         }
     }
 }
