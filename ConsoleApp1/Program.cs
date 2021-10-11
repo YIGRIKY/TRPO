@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgafonovTheBest;
+using System;
 
 namespace ConsoleApp1
 {
@@ -8,7 +9,7 @@ namespace ConsoleApp1
         {
             QuadraticEquation b = new QuadraticEquation();
             Console.WriteLine(b.calcLinearEquation(1, -2)[0]);
-            foreach (var item in b.calcQuadraticEquation(-3, 7, 3))
+            foreach (var item in b.solve(-3, 7, 3))
             {
                 Console.WriteLine(item);
             }

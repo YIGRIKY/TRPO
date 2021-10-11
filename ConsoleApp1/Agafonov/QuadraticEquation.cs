@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp1
+namespace AgafonovTheBest
 {
-    class QuadraticEquation : LinearEquation
+    class QuadraticEquation : LinearEquation, EquationInterface
     {
 
-        public List<double> calcQuadraticEquation(double a, double b, double c)
+        public List<float> solve(float a, float b, float c)
         {
             if (a == 0)
             {
@@ -20,14 +20,14 @@ namespace ConsoleApp1
                 throw new ArgumentException("Дискриминант меньше нуля");
 
             if (discriminant == 0)
-                return x = new List<double>(){ -b / (2 * a) };
+                return x = new List<float>() { -b / (2 * a) };
 
             discriminant = Math.Sqrt(discriminant);
 
-            return x = new List<double>(){(-b + discriminant) / (2 * a), (-b - discriminant) / (2 * a) };
-            
+            return x = new List<float>() { (float)(-b + discriminant) / (2 * a), (float)(-b - discriminant) / (2 * a) };
         }
-        private double calcDiscriminant(double a, double b, double c)
+
+        private float calcDiscriminant(float a, float b, float c)
         {
             return (b * b) - (4 * a * c);
         }
