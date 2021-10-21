@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Lab.Core;
 
 namespace AgafonovTheBest
 {
     class QuadraticEquation : LinearEquation, EquationInterface
     {
-        public List<float> solve(float a, float b, float c)
+        public List<float> Solve(float a, float b, float c)
         {
             if (a == 0)
             {
                 return calcLinearEquation(b, c);
             }
 
-            AgafonovLog.I().log("Это квадратное уравнение");
+            AgafonovLog.I().Log("Это квадратное уравнение");
 
             double discriminant = calcDiscriminant(a, b, c);
 
