@@ -17,7 +17,7 @@ namespace AgafonovTheBest
             }
                 
 
-            AgafonovLog.I().log("Это линейное уравнение");
+            AgafonovLog.I().Log("Это линейное уравнение");
             return x = new List<float>() { -b / a };
         }
     }

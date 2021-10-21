@@ -1,6 +1,7 @@
 ﻿using AgafonovTheBest;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace ConsoleApp1
 {
@@ -9,6 +10,10 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             AgafonovLog logger = AgafonovLog.I();
+            logger.CheckAndCreateFolder();
+
+            StreamReader reader = new StreamReader("../../../version");
+            logger.Log($"Версия программы {reader.ReadLine()}");
 
             Console.WriteLine("Введите 3 параметра a, b и с");
 
@@ -19,20 +24,20 @@ namespace ConsoleApp1
                 arguments.Add(float.Parse(Console.ReadLine()));
             }
 
-            logger.log($"Введено уравнение {arguments[0]}x^2 + {arguments[1]}x + {arguments[2]}");
+            logger.Log($"Введено уравнение {arguments[0]}x^2 + {arguments[1]}x + {arguments[2]}");
 
             QuadraticEquation b = new QuadraticEquation();
-            logger.log(LinearEquation.MEGASUPERCONST);
+            logger.Log(LinearEquation.MEGASUPERCONST);
             try
             {
-                logger.log("Корни уравнения: " + string.Join(", ",b.solve(arguments[0], arguments[1], arguments[2]).ToArray()));
+                logger.Log("Корни уравнения: " + string.Join(", ",b.Solve(arguments[0], arguments[1], arguments[2]).ToArray()));
             }
             catch (AgafonovException e)
             {
-                logger.log(e.Message);
+                logger.Log(e.Message);
             }
 
-            logger.write();
+            logger.Write();
             Console.ReadKey();
         }
     }
