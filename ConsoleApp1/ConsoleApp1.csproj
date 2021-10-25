@@ -14,8 +14,17 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="TrpoLab" Version="1.0.0" />
   </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="git symbolic-ref --short -q HEAD&gt;version&#xD;&#xA;dotnet add package TrpoLab --version 1.0.0&#xD;&#xA;git clone https://github.com/rok9ru/trpo-core-cs.git" />
+  </Target>
 
 </Project>
