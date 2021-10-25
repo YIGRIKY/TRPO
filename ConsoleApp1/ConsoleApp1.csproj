@@ -3,6 +3,19 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>TrpoLabs</PackageId>
+    <Authors>Agafonov</Authors>
+    <Company>Agafonov</Company>
+    <Product>Laba10</Product>
+    <Description>Лабораторная работа №10</Description>
+    <PackageProjectUrl>https://github.com/YIGRIKY/TRPO</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/YIGRIKY/TRPO</RepositoryUrl>
+    <Copyright></Copyright>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TrpoLab" Version="1.0.0" />
+  </ItemGroup>
 
 </Project>
